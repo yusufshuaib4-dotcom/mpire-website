@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Mpire Global Technologies Sdn. Bhd. — ICT research and development, computer consultancy, and computer programming, based in Kuala Lumpur.">
+<meta name="description" content="Mpire Global Technologies Sdn. Bhd.: ICT research and development, computer consultancy, and computer programming, based in Kuala Lumpur.">
 <title>Mpire Global Technologies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,24 +107,24 @@
     backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
-  .nav-row{ display:flex; align-items:center; justify-content:space-between; padding-block:14px; }
-  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .nav-row{ display:flex; align-items:center; justify-content:space-between; padding-block:14px; gap:18px; }
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; flex:none; }
   .brand-mark{
     width:32px; height:32px; border-radius:var(--radius-sm); flex:none;
     background:var(--brand);
     color:#fff; font-family:var(--font-mono); font-weight:700; font-size:15px;
     display:flex; align-items:center; justify-content:center;
   }
-  .brand-name{ font-weight:700; font-size:15.5px; color:var(--ink); letter-spacing:-0.01em; }
-  .nav-links{ display:flex; align-items:center; gap:30px; list-style:none; margin:0; padding:0; }
-  .nav-links a{ text-decoration:none; color:var(--ink-soft); font-size:14.5px; font-weight:600; position:relative; }
+  .brand-name{ font-weight:700; font-size:15.5px; color:var(--ink); letter-spacing:-0.01em; white-space:nowrap; }
+  .nav-links{ display:flex; align-items:center; gap:18px; list-style:none; margin:0; padding:0; }
+  .nav-links a{ text-decoration:none; color:var(--ink-soft); font-size:13.5px; font-weight:600; position:relative; white-space:nowrap; }
   .nav-links a::after{
     content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:var(--brand);
     transform:scaleX(0); transform-origin:left; transition:transform .2s ease;
   }
   .nav-links a:hover{ color:var(--ink); }
   .nav-links a:hover::after{ transform:scaleX(1); }
-  .nav-actions{ display:flex; align-items:center; gap:14px; }
+  .nav-actions{ display:flex; align-items:center; gap:14px; flex:none; }
   .nav-cta{ display:inline-flex; }
   .nav-toggle{
     display:none; width:38px; height:38px; border-radius:var(--radius-sm); border:1px solid var(--line);
@@ -138,7 +138,7 @@
   .mobile-menu.open{ display:flex; }
   .mobile-menu a{ padding:11px 4px; text-decoration:none; color:var(--ink); font-weight:600; border-radius:var(--radius-sm); }
   .mobile-menu a:hover{ background:var(--paper-tint); }
-  @media (max-width:860px){
+  @media (max-width:1100px){
     .nav-links, .nav-cta{ display:none; }
     .nav-toggle{ display:flex; }
   }
@@ -260,6 +260,19 @@
   .fact-list b{ min-width:140px; flex:none; color:var(--ink); font-weight:700; }
   .fact-list span{ color:var(--ink-soft); }
 
+  /* ---------- Cross-link cards (Work / Insights) ---------- */
+  .cross-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  @media (max-width:720px){ .cross-grid{ grid-template-columns:1fr; } }
+  .cross-card{
+    display:block; text-decoration:none; color:var(--ink); background:var(--paper);
+    border:1.5px solid var(--line-strong); border-radius:var(--radius); padding:32px 28px;
+    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .cross-card:hover{ border-color:var(--brand); transform:translateY(-2px); box-shadow:var(--shadow-md); }
+  .cross-card h3{ font-size:19px; margin:14px 0 16px; }
+  .cross-card p{ color:var(--ink-soft); font-size:14.6px; margin-bottom:18px; }
+  .cross-card .go{ font-weight:700; font-size:14px; color:var(--brand); }
+
   /* ---------- Marquee ---------- */
   .marquee-wrap{ background:var(--ink); border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(255,255,255,0.08); overflow:hidden; }
   .marquee{ display:flex; width:max-content; animation:scroll-left 26s linear infinite; }
@@ -310,7 +323,7 @@
   /* ---------- Footer ---------- */
   .footer{ background:var(--paper); border-top:1px solid var(--line); padding-block:40px; }
   .footer-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
-  .footer-links{ display:flex; gap:22px; list-style:none; margin:0; padding:0; }
+  .footer-links{ display:flex; gap:18px; list-style:none; margin:0; padding:0; flex-wrap:wrap; }
   .footer-links a{ text-decoration:none; color:var(--ink-soft); font-size:13.5px; }
   .footer-links a:hover{ color:var(--ink); }
   .footer-copy{ font-size:13px; color:var(--ink-soft); }
@@ -332,8 +345,11 @@
     <nav aria-label="Primary">
       <ul class="nav-links">
         <li><a href="services.html">Services</a></li>
-        <li><a href="index.html#approach">Approach</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="careers.html">Careers</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
@@ -347,8 +363,11 @@
   <div class="container">
     <div class="mobile-menu" id="mobileMenu">
       <a href="services.html">Services</a>
-      <a href="index.html#approach">Approach</a>
+      <a href="industries.html">Industries</a>
+      <a href="work.html">Work</a>
+      <a href="insights.html">Insights</a>
       <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
       <a href="index.html#contact">Contact</a>
     </div>
   </div>
@@ -359,8 +378,8 @@
   <div class="container hero-inner">
     <div class="hero-copy">
       <p class="eyebrow on-dark">Kuala Lumpur · ICT Sdn. Bhd.</p>
-      <h1>Applied research, straight advice, and software that ships.</h1>
-      <p class="lede">Mpire Global Technologies is a Kuala Lumpur based ICT company working across three registered disciplines — R&amp;D, computer consultancy, and computer programming — carried end to end by the same senior team.</p>
+      <h1>Applied research, independent advisory, and engineering built to last.</h1>
+      <p class="lede">Mpire Global Technologies is a Kuala Lumpur based ICT company operating across three registered disciplines: research and development, computer consultancy, and computer programming. One senior team carries every engagement from first diagnosis through to delivery.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="index.html#contact">Start a conversation</a>
         <a class="btn btn-ghost" href="services.html">See what we do</a>
@@ -373,7 +392,7 @@
         <div class="stat-item"><b>Sdn. Bhd.</b><span>Registered private company</span></div>
         <div class="stat-item"><b>3 disciplines</b><span>R&amp;D · Consultancy · Programming</span></div>
         <div class="stat-item"><b>Kuala Lumpur</b><span>Tun Razak Exchange</span></div>
-        <div class="stat-item"><b>Senior team</b><span>No hand-offs, start to finish</span></div>
+        <div class="stat-item"><b>Senior-led</b><span>Delivery, start to finish</span></div>
       </div>
     </div>
   </div>
@@ -407,28 +426,28 @@
 <section class="section" id="services">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">What we do</p>
+      <p class="eyebrow">Capabilities</p>
       <h2>Three disciplines. One accountable team.</h2>
-      <p>Each service stands on its own, but the same engineers carry a project across all three — no hand-off between the people who scope the work and the people who deliver it.</p>
+      <p>Each discipline stands on its own. In practice, the same engineers carry an engagement across all three, so the people who scope the work are the people who deliver it.</p>
     </div>
     <div class="services-grid">
       <div class="svc-card svc-card--solid reveal">
         <span class="no">01</span>
         <h3>R&amp;D on ICT</h3>
-        <p>Applied research into emerging information and communication technology — the exploratory work that de-risks what gets built next.</p>
+        <p>Applied research into emerging information and communication technology. The exploratory work that de-risks what gets built next.</p>
         <a class="go" href="services.html#rnd">Explore R&amp;D →</a>
       </div>
       <div class="svc-card svc-card--outline reveal">
         <span class="no">02</span>
         <h3>Computer Consultancy</h3>
-        <p>Independent technical advice on architecture, tooling, and technology strategy — grounded in what will actually run and scale.</p>
+        <p>Independent technical advisory on architecture, tooling, and technology strategy, grounded in what will actually run and scale.</p>
         <a class="go" href="services.html#consultancy">Explore consultancy →</a>
       </div>
       <div class="svc-card svc-card--photo reveal">
         <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?w=900&q=80&auto=format&fit=crop" alt="" role="presentation">
         <span class="no">03</span>
         <h3>Computer Programming</h3>
-        <p>Custom software engineering and systems integration, designed and supported by the team that scoped it.</p>
+        <p>Custom software engineering and systems integration, designed, delivered, and supported by the team that scoped it.</p>
         <a class="go" href="services.html#programming">Explore programming →</a>
       </div>
     </div>
@@ -438,30 +457,30 @@
 <section class="approach-band" id="approach">
   <div class="container">
     <div class="section-head on-dark reveal">
-      <p class="eyebrow on-dark">How we work</p>
-      <h2 style="color:#fff;">From first conversation to ongoing support.</h2>
+      <p class="eyebrow on-dark">Engagement model</p>
+      <h2 style="color:#fff;">From initial diagnosis to ongoing support.</h2>
       <p>The same four-stage process runs whether the engagement is a two-week research spike or a multi-month build.</p>
     </div>
     <div class="steps reveal">
       <div class="step">
         <span class="step-no">01</span>
         <h3>Discover</h3>
-        <p>Start with the problem, not the solution — constraints, stakeholders, and what "done" looks like.</p>
+        <p>We start with the problem, not the solution: constraints, stakeholders, and what "done" actually looks like.</p>
       </div>
       <div class="step">
         <span class="step-no">02</span>
         <h3>Design</h3>
-        <p>An architecture and delivery plan sized to the real problem, reviewed with you before any build work starts.</p>
+        <p>An architecture and delivery plan sized to the real problem, reviewed with you before any engineering begins.</p>
       </div>
       <div class="step">
         <span class="step-no">03</span>
         <h3>Build</h3>
-        <p>Engineering in small, reviewable increments, with regular check-ins rather than one reveal at the end.</p>
+        <p>Delivery in small, reviewable increments, with regular check-ins rather than a single reveal at the end.</p>
       </div>
       <div class="step">
         <span class="step-no">04</span>
         <h3>Support</h3>
-        <p>We stay attached after launch for monitoring, fixes, and iteration — the team that built it maintains it.</p>
+        <p>We remain engaged after launch for monitoring, fixes, and iteration. The team that built the system maintains it.</p>
       </div>
     </div>
   </div>
@@ -475,17 +494,41 @@
     </div>
     <div class="about-copy reveal">
       <p class="eyebrow">About Mpire</p>
-      <h2 style="margin-top:14px;">A small, senior team working across research, advice, and software.</h2>
+      <h2 style="margin-top:14px;">A small, senior team spanning research, advisory, and software delivery.</h2>
       <p style="margin-top:20px;">Mpire Global Technologies Sdn. Bhd. is registered to carry out research and development in information and communication technology, computer consultancy, and computer programming activities.</p>
-      <p>We work as a small, senior team by design — close enough to a problem to research it properly, and hands-on enough to build and maintain what comes out of that research.</p>
+      <p>We operate as a small, senior team by design: close enough to a problem to diagnose it properly, and hands-on enough to build and maintain what follows from that diagnosis.</p>
       <ul class="fact-list">
-        <li><b>Location</b><span>Kuala Lumpur, Malaysia — Tun Razak Exchange</span></li>
+        <li><b>Location</b><span>Kuala Lumpur, Malaysia (Tun Razak Exchange)</span></li>
         <li><b>Structure</b><span>Private limited company (Sdn. Bhd.)</span></li>
         <li><b>Contact</b><span>Andre Amos Crooks</span></li>
       </ul>
       <div style="margin-top:28px;">
         <a class="btn btn-outline" href="about.html">More about us →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Read on</p>
+      <h2>See the model at work.</h2>
+      <p>Two more places to look before you get in touch: how engagements play out in practice, and what we're currently thinking about.</p>
+    </div>
+    <div class="cross-grid">
+      <a class="cross-card reveal" href="work.html">
+        <span class="eyebrow">Selected work</span>
+        <h3>How the model plays out across real engagements.</h3>
+        <p>Representative engagements across R&amp;D, consultancy, and programming, described in general terms to respect client confidentiality.</p>
+        <span class="go">View our work →</span>
+      </a>
+      <a class="cross-card reveal" href="insights.html">
+        <span class="eyebrow">Perspectives</span>
+        <h3>Notes on applied AI, architecture, and delivery.</h3>
+        <p>Short, practitioner-level perspectives on the decisions that determine whether a technology investment pays off.</p>
+        <span class="go">Read our insights →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -535,8 +578,11 @@
     </a>
     <ul class="footer-links">
       <li><a href="services.html">Services</a></li>
-      <li><a href="index.html#approach">Approach</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="insights.html">Insights</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="careers.html">Careers</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <span class="footer-copy">© 2026 Mpire Global Technologies Sdn. Bhd.</span>
@@ -603,7 +649,7 @@
       fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
         .then(function(res){
           if(res.ok){
-            showStatus("Thanks — your message has been sent. We'll get back to you soon.", 'success');
+            showStatus("Thank you. Your message has been sent, and we'll get back to you soon.", 'success');
             form.reset();
           } else {
             throw new Error('Form endpoint not ready');
@@ -611,7 +657,7 @@
         })
         .catch(function(){
           var subject = encodeURIComponent('Enquiry from ' + name);
-          var body = encodeURIComponent(message + ' — ' + name + ' (' + email + ')');
+          var body = encodeURIComponent(message + '. Sent by ' + name + ' (' + email + ').');
           window.location.href = 'mailto:hello@mpiretech.com?subject=' + subject + '&body=' + body;
           showStatus('Opening your email client to send this message directly.', 'success');
         })
