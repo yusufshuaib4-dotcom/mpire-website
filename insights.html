@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Perspectives from Mpire Global Technologies on applied AI, technology delivery, and the practical decisions that separate a working system from a promising demo.">
+<title>Insights: Mpire Global Technologies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0A12;
+    --ink-soft:#53536B;
+    --paper:#FFFFFF;
+    --paper-tint:#F5F4FA;
+    --brand:#3D2FE0;
+    --brand-deep:#241C99;
+    --brand-tint:#ECEAFF;
+    --pop:#D6FF3F;
+    --line:#E4E3EE;
+    --line-strong:#C9C7DE;
+    --on-dark-ink:#F5F5FF;
+    --on-dark-muted:#B7B4E0;
+    --shadow-sm: 0 1px 2px rgba(10,10,18,0.08);
+    --shadow-md: 0 12px 32px -16px rgba(10,10,18,0.35);
+    --shadow-lg: 0 30px 60px -24px rgba(10,10,18,0.5);
+    --radius:6px;
+    --radius-sm:4px;
+    --font-sans:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0E0E17;
+      --paper-tint:#161623;
+      --ink:#F2F1FA;
+      --ink-soft:#ABA9C8;
+      --line:#292A3C;
+      --line-strong:#3B3C55;
+      --brand-tint:rgba(61,47,224,0.18);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0E0E17;
+    --paper-tint:#161623;
+    --ink:#F2F1FA;
+    --ink-soft:#ABA9C8;
+    --line:#292A3C;
+    --line-strong:#3B3C55;
+    --brand-tint:rgba(61,47,224,0.18);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-sans);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  h1,h2,h3{ font-weight:800; line-height:1.08; letter-spacing:-0.015em; text-wrap:balance; margin:0; }
+  p{ margin:0; }
+  .container{ max-width:1200px; margin:0 auto; padding-inline:24px; }
+  section{ position:relative; }
+  ::selection{ background:var(--pop); color:var(--ink); }
+  :focus-visible{ outline:2px solid var(--brand); outline-offset:3px; border-radius:2px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--brand); font-weight:600;
+  }
+  .eyebrow::before{ content:""; width:16px; height:3px; background:var(--pop); flex:none; }
+  .eyebrow.on-dark{ color:var(--pop); }
+  .eyebrow.on-dark::before{ background:var(--pop); }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:9px;
+    padding:14px 24px; border-radius:var(--radius-sm); font-weight:700; font-size:15px;
+    text-decoration:none; border:1.5px solid transparent; cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn-primary{ background:var(--pop); color:var(--ink); box-shadow:var(--shadow-sm); }
+  .btn-primary:hover{ background:#c3ec1f; box-shadow:var(--shadow-md); }
+  .btn-ghost{ background:transparent; color:#fff; border-color:rgba(255,255,255,0.35); }
+  .btn-ghost:hover{ background:rgba(255,255,255,0.1); border-color:#fff; }
+  .btn-outline{ background:transparent; color:var(--ink); border-color:var(--line-strong); }
+  .btn-outline:hover{ border-color:var(--brand); color:var(--brand); }
+  .btn-dark{ background:var(--ink); color:#fff; }
+  .btn-dark:hover{ background:var(--brand-deep); }
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:sticky; top:0; z-index:40;
+    background:color-mix(in srgb, var(--paper) 90%, transparent);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{ display:flex; align-items:center; justify-content:space-between; padding-block:14px; gap:18px; }
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; flex:none; }
+  .brand-mark{
+    width:32px; height:32px; border-radius:var(--radius-sm); flex:none;
+    background:var(--brand);
+    color:#fff; font-family:var(--font-mono); font-weight:700; font-size:15px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .brand-name{ font-weight:700; font-size:15.5px; color:var(--ink); letter-spacing:-0.01em; white-space:nowrap; }
+  .nav-links{ display:flex; align-items:center; gap:18px; list-style:none; margin:0; padding:0; }
+  .nav-links a{ text-decoration:none; color:var(--ink-soft); font-size:13.5px; font-weight:600; position:relative; white-space:nowrap; }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:var(--brand);
+    transform:scaleX(0); transform-origin:left; transition:transform .2s ease;
+  }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-links a:hover::after{ transform:scaleX(1); }
+  .nav-actions{ display:flex; align-items:center; gap:14px; flex:none; }
+  .nav-cta{ display:inline-flex; }
+  .nav-toggle{
+    display:none; width:38px; height:38px; border-radius:var(--radius-sm); border:1px solid var(--line);
+    background:var(--paper); cursor:pointer; align-items:center; justify-content:center; flex-direction:column; gap:4px;
+  }
+  .nav-toggle span{ width:16px; height:2px; background:var(--ink); border-radius:2px; transition:transform .2s ease, opacity .2s ease; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+  .mobile-menu{ display:none; flex-direction:column; gap:2px; padding:10px 0 16px; border-top:1px solid var(--line); }
+  .mobile-menu.open{ display:flex; }
+  .mobile-menu a{ padding:11px 4px; text-decoration:none; color:var(--ink); font-weight:600; border-radius:var(--radius-sm); }
+  .mobile-menu a:hover{ background:var(--paper-tint); }
+  @media (max-width:1100px){
+    .nav-links, .nav-cta{ display:none; }
+    .nav-toggle{ display:flex; }
+  }
+
+  /* ---------- Page hero (full-bleed photo) ---------- */
+  .page-hero{
+    position:relative; overflow:hidden; background:var(--ink); color:var(--on-dark-ink);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .page-hero-bg{ position:absolute; inset:0; z-index:0; }
+  .page-hero-bg img{ width:100%; height:100%; object-fit:cover; filter:grayscale(55%) contrast(1.1) brightness(0.7); }
+  .page-hero-bg::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(100deg, rgba(6,5,20,0.94) 30%, rgba(36,28,153,0.72) 64%, rgba(61,47,224,0.5) 100%);
+  }
+  .page-hero .container{ position:relative; z-index:1; padding-block:76px 60px; }
+  .breadcrumb{ font-family:var(--font-mono); font-size:12.5px; color:var(--on-dark-muted); margin-bottom:18px; }
+  .breadcrumb a{ color:var(--on-dark-muted); text-decoration:none; }
+  .breadcrumb a:hover{ color:#fff; }
+  .page-hero h1{ color:#fff; font-size:clamp(2.1rem, 4.2vw, 3rem); max-width:28ch; }
+  .page-hero .lede{ margin-top:18px; max-width:64ch; color:var(--on-dark-muted); font-size:16.5px; }
+
+  /* ---------- Reveal ---------- */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in-view{ opacity:1; transform:none; }
+
+  /* ---------- Section headers ---------- */
+  .section{ padding-block:100px; }
+  .section-head{ max-width:680px; margin-bottom:40px; }
+  .section-head .eyebrow{ margin-bottom:16px; }
+  .section-head h2{ font-size:clamp(1.8rem, 3.4vw, 2.5rem); }
+  .section-head p{ margin-top:16px; color:var(--ink-soft); font-size:16.5px; }
+  .section-tint{ background:var(--paper-tint); }
+
+  /* ---------- Article list ---------- */
+  .article-list{ display:flex; flex-direction:column; }
+  .article-item{ display:grid; grid-template-columns:220px 1fr; gap:48px; padding-block:48px; border-bottom:1px solid var(--line); }
+  .article-item:first-child{ padding-top:0; }
+  .article-item:last-child{ border-bottom:none; padding-bottom:0; }
+  @media (max-width:860px){ .article-item{ grid-template-columns:1fr; gap:16px; } }
+  .article-meta{ display:flex; flex-direction:column; gap:10px; }
+  .article-tag{
+    display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono); font-size:11px;
+    text-transform:uppercase; letter-spacing:0.06em; color:var(--brand); font-weight:700;
+    background:var(--brand-tint); padding:5px 10px; border-radius:var(--radius-sm); width:fit-content;
+  }
+  .article-read{ font-family:var(--font-mono); font-size:12px; color:var(--ink-soft); }
+  .article-body h3{ font-size:21px; margin-bottom:14px; }
+  .article-body p{ color:var(--ink-soft); font-size:15px; line-height:1.7; margin-bottom:14px; }
+  .article-body p:last-child{ margin-bottom:0; }
+
+  /* ---------- CTA mini banner ---------- */
+  .cta-mini{ background:var(--brand); color:#fff; overflow:hidden; position:relative; }
+  .cta-mini::before{
+    content:""; position:absolute; inset:0; z-index:0;
+    background:radial-gradient(700px 380px at 92% 0%, rgba(255,255,255,0.16), transparent 60%);
+  }
+  .cta-mini .container{ position:relative; z-index:1; padding-block:80px; text-align:center; }
+  .cta-mini h2{ color:#fff; font-size:clamp(1.7rem, 3vw, 2.3rem); margin-bottom:16px; }
+  .cta-mini p{ color:rgba(255,255,255,0.82); max-width:48ch; margin-inline:auto; }
+
+  /* ---------- Footer ---------- */
+  .footer{ background:var(--paper); border-top:1px solid var(--line); padding-block:40px; }
+  .footer-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  .footer-links{ display:flex; gap:18px; list-style:none; margin:0; padding:0; flex-wrap:wrap; }
+  .footer-links a{ text-decoration:none; color:var(--ink-soft); font-size:13.5px; }
+  .footer-links a:hover{ color:var(--ink); }
+  .footer-copy{ font-size:13px; color:var(--ink-soft); }
+
+  /* ---------- Active nav ---------- */
+  .nav-links a.active{ color:var(--ink); }
+  .nav-links a.active::after{ transform:scaleX(1); }
+  .mobile-menu a.active{ background:var(--paper-tint); }
+</style>
+
+<body>
+
+<header class="nav">
+  <div class="container nav-row">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">M</span>
+      <span class="brand-name">Mpire Global Technologies</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="insights.html" class="active">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-dark nav-cta" href="index.html#contact">Start a project</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="services.html">Services</a>
+      <a href="industries.html">Industries</a>
+      <a href="work.html">Work</a>
+      <a href="insights.html" class="active">Insights</a>
+      <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1620275765334-4ed948bb4502?w=1800&q=80&auto=format&fit=crop" alt="" role="presentation"></div>
+  <div class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> / Insights</p>
+    <p class="eyebrow on-dark">Perspectives</p>
+    <h1>What we are thinking about between engagements.</h1>
+    <p class="lede">Short, practitioner-level notes on the decisions that determine whether an AI or software initiative actually reaches production, drawn from work across research, consultancy, and delivery.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Notes from the field</p>
+      <h2>Practical positions, not thought leadership for its own sake.</h2>
+      <p>We write when we have a specific, defensible view worth putting our name to. Nothing here is theoretical: each note reflects a judgment call we have actually had to make.</p>
+    </div>
+
+    <div class="article-list">
+      <article class="article-item reveal">
+        <div class="article-meta">
+          <span class="article-tag">R&amp;D</span>
+          <span class="article-read">6 min read</span>
+        </div>
+        <div class="article-body">
+          <h3>A proof of concept should be allowed to fail</h3>
+          <p>The purpose of a proof of concept is to answer one question honestly: is the riskiest assumption behind this idea true. Too many organisations design their pilots to succeed instead, quietly narrowing scope and cherry-picking test conditions until a positive result is guaranteed. That protects a budget line for another quarter. It does not protect the business from building on a foundation that will not hold.</p>
+          <p>Our practice is to name the assumption we are actually testing before any code is written, agree with the client on what a negative result would mean, and hold the test to that standard even when the early signs look encouraging. A proof of concept that cannot fail was never a test in the first place. It was a demo with better paperwork.</p>
+        </div>
+      </article>
+
+      <article class="article-item reveal">
+        <div class="article-meta">
+          <span class="article-tag">Consultancy</span>
+          <span class="article-read">5 min read</span>
+        </div>
+        <div class="article-body">
+          <h3>Design the pilot team before you design the pilot</h3>
+          <p>Most AI pilots are scoped as a technical exercise: pick a use case, pick a model, measure an accuracy number. The organisational question, who owns the pilot once it leaves the lab and who has the authority to change a business process around it, is usually answered later, if at all. By then the pilot has either quietly stalled for lack of an owner, or succeeded and immediately exposed that no one was resourced to operationalise it.</p>
+          <p>We ask clients to name the pilot's eventual operational owner before the first line of code is written, not after the results come in. It is an uncomfortable conversation to have early. It is a far more expensive one to have after the technology has already proven itself and stalled anyway.</p>
+        </div>
+      </article>
+
+      <article class="article-item reveal">
+        <div class="article-meta">
+          <span class="article-tag">Programming</span>
+          <span class="article-read">7 min read</span>
+        </div>
+        <div class="article-body">
+          <h3>The real cost of hosting your own model</h3>
+          <p>Self-hosting a large language model is often framed as a data-sovereignty decision, and sometimes it is exactly that. But the total cost of the decision rarely appears on the same page as the sovereignty argument. Hosting introduces a standing commitment to GPU capacity, model versioning, and a security posture that a managed API absorbs on your behalf. The comparison that matters is not licence cost versus infrastructure cost. It is who on your team will own that infrastructure at 2 a.m. when it needs attention.</p>
+          <p>We help clients make this trade-off explicitly, sizing the operational commitment against the actual sensitivity of the data involved, rather than defaulting to self-hosting because it sounds more serious or to a managed API because it is faster to start with.</p>
+        </div>
+      </article>
+
+      <article class="article-item reveal">
+        <div class="article-meta">
+          <span class="article-tag">Consultancy</span>
+          <span class="article-read">5 min read</span>
+        </div>
+        <div class="article-body">
+          <h3>Technical debt is a planning input, not a confession</h3>
+          <p>Engineering teams tend to disclose technical debt apologetically, as though it were evidence of past failure. Framed that way, it gets minimised in front of decision-makers, and the roadmap gets built on an inaccurate picture of what the system can actually support. Debt is better treated as a planning input with a cost and an interest rate, the same as any other constraint a delivery plan has to account for.</p>
+          <p>When we review a codebase or an architecture, we quantify debt in terms of what it will cost to work around versus what it will cost to resolve, and let the client make an informed trade-off. Neither answer is inherently correct. An uninformed one is the only real risk.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-mini">
+  <div class="container">
+    <p class="eyebrow on-dark" style="justify-content:center; color:rgba(255,255,255,0.85);">Have a question like these?</p>
+    <h2 style="margin-top:14px;">Bring us the decision you are trying to make.</h2>
+    <p>We are usually glad to talk through a problem even before it becomes a formal engagement.</p>
+    <div style="margin-top:28px;">
+      <a class="btn btn-primary" href="index.html#contact">Start a conversation</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">M</span>
+      <span class="brand-name">Mpire Global Technologies</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Mpire Global Technologies Sdn. Bhd.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  if(toggle && menu){
+    toggle.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduceMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  }
+})();
+</script>
+</body>
+</html>
