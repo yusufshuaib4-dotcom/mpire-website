@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Careers at Mpire Global Technologies: a small, senior team that hires rarely, and how to get on our radar.">
+<title>Careers: Mpire Global Technologies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0A12;
+    --ink-soft:#53536B;
+    --paper:#FFFFFF;
+    --paper-tint:#F5F4FA;
+    --brand:#3D2FE0;
+    --brand-deep:#241C99;
+    --brand-tint:#ECEAFF;
+    --pop:#D6FF3F;
+    --line:#E4E3EE;
+    --line-strong:#C9C7DE;
+    --on-dark-ink:#F5F5FF;
+    --on-dark-muted:#B7B4E0;
+    --shadow-sm: 0 1px 2px rgba(10,10,18,0.08);
+    --shadow-md: 0 12px 32px -16px rgba(10,10,18,0.35);
+    --shadow-lg: 0 30px 60px -24px rgba(10,10,18,0.5);
+    --radius:6px;
+    --radius-sm:4px;
+    --font-sans:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0E0E17;
+      --paper-tint:#161623;
+      --ink:#F2F1FA;
+      --ink-soft:#ABA9C8;
+      --line:#292A3C;
+      --line-strong:#3B3C55;
+      --brand-tint:rgba(61,47,224,0.18);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0E0E17;
+    --paper-tint:#161623;
+    --ink:#F2F1FA;
+    --ink-soft:#ABA9C8;
+    --line:#292A3C;
+    --line-strong:#3B3C55;
+    --brand-tint:rgba(61,47,224,0.18);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-sans);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  h1,h2,h3{ font-weight:800; line-height:1.08; letter-spacing:-0.015em; text-wrap:balance; margin:0; }
+  p{ margin:0; }
+  .container{ max-width:1200px; margin:0 auto; padding-inline:24px; }
+  section{ position:relative; }
+  ::selection{ background:var(--pop); color:var(--ink); }
+  :focus-visible{ outline:2px solid var(--brand); outline-offset:3px; border-radius:2px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--brand); font-weight:600;
+  }
+  .eyebrow::before{ content:""; width:16px; height:3px; background:var(--pop); flex:none; }
+  .eyebrow.on-dark{ color:var(--pop); }
+  .eyebrow.on-dark::before{ background:var(--pop); }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:9px;
+    padding:14px 24px; border-radius:var(--radius-sm); font-weight:700; font-size:15px;
+    text-decoration:none; border:1.5px solid transparent; cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn-primary{ background:var(--pop); color:var(--ink); box-shadow:var(--shadow-sm); }
+  .btn-primary:hover{ background:#c3ec1f; box-shadow:var(--shadow-md); }
+  .btn-ghost{ background:transparent; color:#fff; border-color:rgba(255,255,255,0.35); }
+  .btn-ghost:hover{ background:rgba(255,255,255,0.1); border-color:#fff; }
+  .btn-outline{ background:transparent; color:var(--ink); border-color:var(--line-strong); }
+  .btn-outline:hover{ border-color:var(--brand); color:var(--brand); }
+  .btn-dark{ background:var(--ink); color:#fff; }
+  .btn-dark:hover{ background:var(--brand-deep); }
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:sticky; top:0; z-index:40;
+    background:color-mix(in srgb, var(--paper) 90%, transparent);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{ display:flex; align-items:center; justify-content:space-between; padding-block:14px; gap:18px; }
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; flex:none; }
+  .brand-mark{
+    width:32px; height:32px; border-radius:var(--radius-sm); flex:none;
+    background:var(--brand);
+    color:#fff; font-family:var(--font-mono); font-weight:700; font-size:15px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .brand-name{ font-weight:700; font-size:15.5px; color:var(--ink); letter-spacing:-0.01em; white-space:nowrap; }
+  .nav-links{ display:flex; align-items:center; gap:18px; list-style:none; margin:0; padding:0; }
+  .nav-links a{ text-decoration:none; color:var(--ink-soft); font-size:13.5px; font-weight:600; position:relative; white-space:nowrap; }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:var(--brand);
+    transform:scaleX(0); transform-origin:left; transition:transform .2s ease;
+  }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-links a:hover::after{ transform:scaleX(1); }
+  .nav-actions{ display:flex; align-items:center; gap:14px; flex:none; }
+  .nav-cta{ display:inline-flex; }
+  .nav-toggle{
+    display:none; width:38px; height:38px; border-radius:var(--radius-sm); border:1px solid var(--line);
+    background:var(--paper); cursor:pointer; align-items:center; justify-content:center; flex-direction:column; gap:4px;
+  }
+  .nav-toggle span{ width:16px; height:2px; background:var(--ink); border-radius:2px; transition:transform .2s ease, opacity .2s ease; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+  .mobile-menu{ display:none; flex-direction:column; gap:2px; padding:10px 0 16px; border-top:1px solid var(--line); }
+  .mobile-menu.open{ display:flex; }
+  .mobile-menu a{ padding:11px 4px; text-decoration:none; color:var(--ink); font-weight:600; border-radius:var(--radius-sm); }
+  .mobile-menu a:hover{ background:var(--paper-tint); }
+  @media (max-width:1100px){
+    .nav-links, .nav-cta{ display:none; }
+    .nav-toggle{ display:flex; }
+  }
+
+  /* ---------- Page hero (full-bleed photo) ---------- */
+  .page-hero{
+    position:relative; overflow:hidden; background:var(--ink); color:var(--on-dark-ink);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .page-hero-bg{ position:absolute; inset:0; z-index:0; }
+  .page-hero-bg img{ width:100%; height:100%; object-fit:cover; filter:grayscale(55%) contrast(1.1) brightness(0.7); }
+  .page-hero-bg::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(100deg, rgba(6,5,20,0.94) 30%, rgba(36,28,153,0.72) 64%, rgba(61,47,224,0.5) 100%);
+  }
+  .page-hero .container{ position:relative; z-index:1; padding-block:76px 60px; }
+  .breadcrumb{ font-family:var(--font-mono); font-size:12.5px; color:var(--on-dark-muted); margin-bottom:18px; }
+  .breadcrumb a{ color:var(--on-dark-muted); text-decoration:none; }
+  .breadcrumb a:hover{ color:#fff; }
+  .page-hero h1{ color:#fff; font-size:clamp(2.1rem, 4.2vw, 3rem); max-width:26ch; }
+  .page-hero .lede{ margin-top:18px; max-width:64ch; color:var(--on-dark-muted); font-size:16.5px; }
+
+  /* ---------- Reveal ---------- */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in-view{ opacity:1; transform:none; }
+
+  /* ---------- Section headers ---------- */
+  .section{ padding-block:100px; }
+  .section-head{ max-width:680px; margin-bottom:40px; }
+  .section-head .eyebrow{ margin-bottom:16px; }
+  .section-head h2{ font-size:clamp(1.8rem, 3.4vw, 2.5rem); }
+  .section-head p{ margin-top:16px; color:var(--ink-soft); font-size:16.5px; }
+  .section-tint{ background:var(--paper-tint); }
+
+  /* ---------- Value grid (reused pattern) ---------- */
+  .val-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; }
+  @media (max-width:860px){ .val-grid{ grid-template-columns:1fr; } }
+  .val-card{
+    background:var(--paper); border:1.5px solid var(--line); border-radius:var(--radius);
+    padding:32px 28px;
+  }
+  .val-card .val-index{ font-family:var(--font-mono); font-size:13px; color:var(--brand); font-weight:700; margin-bottom:14px; }
+  .val-card h3{ font-size:18px; margin-bottom:10px; }
+  .val-card p{ color:var(--ink-soft); font-size:14.5px; line-height:1.65; }
+
+  /* ---------- Open-roles note ---------- */
+  .roles-panel{
+    background:var(--paper-tint); border:1.5px solid var(--line); border-radius:var(--radius);
+    padding:40px 36px; max-width:760px;
+  }
+  .roles-panel h3{ font-size:19px; margin-bottom:14px; }
+  .roles-panel p{ color:var(--ink-soft); font-size:15px; line-height:1.7; margin-bottom:14px; }
+  .roles-panel p:last-child{ margin-bottom:0; }
+
+  /* ---------- CTA mini banner ---------- */
+  .cta-mini{ background:var(--brand); color:#fff; overflow:hidden; position:relative; }
+  .cta-mini::before{
+    content:""; position:absolute; inset:0; z-index:0;
+    background:radial-gradient(700px 380px at 92% 0%, rgba(255,255,255,0.16), transparent 60%);
+  }
+  .cta-mini .container{ position:relative; z-index:1; padding-block:80px; text-align:center; }
+  .cta-mini h2{ color:#fff; font-size:clamp(1.7rem, 3vw, 2.3rem); margin-bottom:16px; }
+  .cta-mini p{ color:rgba(255,255,255,0.82); max-width:48ch; margin-inline:auto; }
+
+  /* ---------- Footer ---------- */
+  .footer{ background:var(--paper); border-top:1px solid var(--line); padding-block:40px; }
+  .footer-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  .footer-links{ display:flex; gap:18px; list-style:none; margin:0; padding:0; flex-wrap:wrap; }
+  .footer-links a{ text-decoration:none; color:var(--ink-soft); font-size:13.5px; }
+  .footer-links a:hover{ color:var(--ink); }
+  .footer-copy{ font-size:13px; color:var(--ink-soft); }
+
+  /* ---------- Active nav ---------- */
+  .nav-links a.active{ color:var(--ink); }
+  .nav-links a.active::after{ transform:scaleX(1); }
+  .mobile-menu a.active{ background:var(--paper-tint); }
+</style>
+
+<body>
+
+<header class="nav">
+  <div class="container nav-row">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">M</span>
+      <span class="brand-name">Mpire Global Technologies</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="careers.html" class="active">Careers</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-dark nav-cta" href="index.html#contact">Start a project</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="services.html">Services</a>
+      <a href="industries.html">Industries</a>
+      <a href="work.html">Work</a>
+      <a href="insights.html">Insights</a>
+      <a href="about.html">About</a>
+      <a href="careers.html" class="active">Careers</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1800&q=80&auto=format&fit=crop" alt="" role="presentation"></div>
+  <div class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> / Careers</p>
+    <p class="eyebrow on-dark">Careers</p>
+    <h1>We hire rarely, but well.</h1>
+    <p class="lede">We are a small, senior team by design, not by circumstance. That means we are not always hiring, and when we are, we are looking for a specific kind of person rather than filling a headcount target.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">How we think about hiring</p>
+      <h2>Depth over headcount.</h2>
+      <p>Every person at Mpire carries an engagement from diagnosis through delivery. That model only works with people who already have the judgment to work independently, which is why we hire slowly and stay small on purpose.</p>
+    </div>
+
+    <div class="val-grid">
+      <div class="val-card reveal">
+        <p class="val-index">01</p>
+        <h3>Judgment over credentials</h3>
+        <p>We care more about how someone reasons through an ambiguous problem than which institutions or companies appear on their background.</p>
+      </div>
+      <div class="val-card reveal">
+        <p class="val-index">02</p>
+        <h3>Comfortable saying no</h3>
+        <p>Independent advice sometimes means telling a client something they did not want to hear. We look for people who can do that constructively.</p>
+      </div>
+      <div class="val-card reveal">
+        <p class="val-index">03</p>
+        <h3>Ownership, start to finish</h3>
+        <p>We do not separate the people who scope a problem from the people who solve it. Anyone who joins us should want that full arc of responsibility.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Current openings</p>
+      <h2>Nothing formally open right now.</h2>
+    </div>
+    <div class="roles-panel reveal">
+      <h3>We keep a shortlist rather than a job board.</h3>
+      <p>We do not currently have a formal vacancy posted, and we would rather say that plainly than publish a generic listing. When we do have a specific need, it is usually narrow: a particular kind of engineering background, or direct experience in one of the sectors we serve.</p>
+      <p>If you think you would be a strong fit for how we work, the most useful thing you can send us is a short note describing a problem you solved that you are proud of, and why. We read every message personally and keep genuinely strong candidates on file for when a fitting opening comes up.</p>
+      <div style="margin-top:24px;">
+        <a class="btn btn-outline" href="index.html#contact">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-mini">
+  <div class="container">
+    <p class="eyebrow on-dark" style="justify-content:center; color:rgba(255,255,255,0.85);">Not quite ready to reach out?</p>
+    <h2 style="margin-top:14px;">See how we actually work first.</h2>
+    <p>Our Insights and Work pages are the most honest picture we can give you of day-to-day life here.</p>
+    <div style="margin-top:28px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="work.html">See our work</a>
+      <a class="btn btn-ghost" href="insights.html">Read our insights</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">M</span>
+      <span class="brand-name">Mpire Global Technologies</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Mpire Global Technologies Sdn. Bhd.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  if(toggle && menu){
+    toggle.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduceMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  }
+})();
+</script>
+</body>
+</html>
