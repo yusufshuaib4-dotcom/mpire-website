@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="About Mpire Global Technologies Sdn. Bhd. — a Kuala Lumpur based ICT company working across applied research, consultancy, and software engineering.">
-<title>About — Mpire Global Technologies</title>
+<meta name="description" content="About Mpire Global Technologies Sdn. Bhd.: a Kuala Lumpur based ICT company working across applied research, advisory, and software engineering.">
+<title>About: Mpire Global Technologies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -107,24 +107,24 @@
     backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
-  .nav-row{ display:flex; align-items:center; justify-content:space-between; padding-block:14px; }
-  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .nav-row{ display:flex; align-items:center; justify-content:space-between; padding-block:14px; gap:18px; }
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; flex:none; }
   .brand-mark{
     width:32px; height:32px; border-radius:var(--radius-sm); flex:none;
     background:var(--brand);
     color:#fff; font-family:var(--font-mono); font-weight:700; font-size:15px;
     display:flex; align-items:center; justify-content:center;
   }
-  .brand-name{ font-weight:700; font-size:15.5px; color:var(--ink); letter-spacing:-0.01em; }
-  .nav-links{ display:flex; align-items:center; gap:30px; list-style:none; margin:0; padding:0; }
-  .nav-links a{ text-decoration:none; color:var(--ink-soft); font-size:14.5px; font-weight:600; position:relative; }
+  .brand-name{ font-weight:700; font-size:15.5px; color:var(--ink); letter-spacing:-0.01em; white-space:nowrap; }
+  .nav-links{ display:flex; align-items:center; gap:18px; list-style:none; margin:0; padding:0; }
+  .nav-links a{ text-decoration:none; color:var(--ink-soft); font-size:13.5px; font-weight:600; position:relative; white-space:nowrap; }
   .nav-links a::after{
     content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:var(--brand);
     transform:scaleX(0); transform-origin:left; transition:transform .2s ease;
   }
   .nav-links a:hover{ color:var(--ink); }
   .nav-links a:hover::after{ transform:scaleX(1); }
-  .nav-actions{ display:flex; align-items:center; gap:14px; }
+  .nav-actions{ display:flex; align-items:center; gap:14px; flex:none; }
   .nav-cta{ display:inline-flex; }
   .nav-toggle{
     display:none; width:38px; height:38px; border-radius:var(--radius-sm); border:1px solid var(--line);
@@ -138,7 +138,7 @@
   .mobile-menu.open{ display:flex; }
   .mobile-menu a{ padding:11px 4px; text-decoration:none; color:var(--ink); font-weight:600; border-radius:var(--radius-sm); }
   .mobile-menu a:hover{ background:var(--paper-tint); }
-  @media (max-width:860px){
+  @media (max-width:1100px){
     .nav-links, .nav-cta{ display:none; }
     .nav-toggle{ display:flex; }
   }
@@ -244,7 +244,7 @@
   /* ---------- Footer ---------- */
   .footer{ background:var(--paper); border-top:1px solid var(--line); padding-block:40px; }
   .footer-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
-  .footer-links{ display:flex; gap:22px; list-style:none; margin:0; padding:0; }
+  .footer-links{ display:flex; gap:18px; list-style:none; margin:0; padding:0; flex-wrap:wrap; }
   .footer-links a{ text-decoration:none; color:var(--ink-soft); font-size:13.5px; }
   .footer-links a:hover{ color:var(--ink); }
   .footer-copy{ font-size:13px; color:var(--ink-soft); }
@@ -266,8 +266,11 @@
     <nav aria-label="Primary">
       <ul class="nav-links">
         <li><a href="services.html">Services</a></li>
-        <li><a href="index.html#approach">Approach</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html" class="active">About</a></li>
+        <li><a href="careers.html">Careers</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
@@ -281,8 +284,11 @@
   <div class="container">
     <div class="mobile-menu" id="mobileMenu">
       <a href="services.html">Services</a>
-      <a href="index.html#approach">Approach</a>
+      <a href="industries.html">Industries</a>
+      <a href="work.html">Work</a>
+      <a href="insights.html">Insights</a>
       <a href="about.html" class="active">About</a>
+      <a href="careers.html">Careers</a>
       <a href="index.html#contact">Contact</a>
     </div>
   </div>
@@ -293,8 +299,8 @@
   <div class="container">
     <p class="breadcrumb"><a href="index.html">Home</a> / About</p>
     <p class="eyebrow on-dark">About Mpire</p>
-    <h1>A small, senior team working across research, advice, and software.</h1>
-    <p class="lede">Mpire Global Technologies Sdn. Bhd. is a Kuala Lumpur based ICT company. We don't separate the people who study a problem from the people who build the fix — the same engineers carry it end to end.</p>
+    <h1>A small, senior team spanning research, advisory, and software delivery.</h1>
+    <p class="lede">Mpire Global Technologies Sdn. Bhd. is a Kuala Lumpur based ICT company. We don't separate the people who diagnose a problem from the people who build the fix: the same engineers carry an engagement end to end.</p>
   </div>
 </section>
 
@@ -304,10 +310,10 @@
       <p class="eyebrow">Our story</p>
       <h2 style="margin-top:14px;">Based in Kuala Lumpur, built for how software actually gets used.</h2>
       <p style="margin-top:20px;">Mpire Global Technologies Sdn. Bhd. is registered to carry out research and development in information and communication technology, computer consultancy, and computer programming activities.</p>
-      <p>We work as a small, senior team by design — close enough to a problem to research it properly, and hands-on enough to build and maintain what comes out of that research. There is no hand-off between the people who scope a project and the people who ship it.</p>
+      <p>We operate as a small, senior team by design: close enough to a problem to diagnose it properly, and hands-on enough to build and maintain what follows. There is no hand-off between the people who scope an engagement and the people who deliver it.</p>
       <p>That structure shapes what we take on: work where understanding the problem correctly matters as much as writing the code, and where someone needs to still be reachable after launch.</p>
       <ul class="fact-list">
-        <li><b>Location</b><span>Kuala Lumpur, Malaysia — Tun Razak Exchange</span></li>
+        <li><b>Location</b><span>Kuala Lumpur, Malaysia (Tun Razak Exchange)</span></li>
         <li><b>Structure</b><span>Private limited company (Sdn. Bhd.)</span></li>
         <li><b>Focus</b><span>ICT R&amp;D, consultancy, and software engineering</span></li>
         <li><b>Contact</b><span>Andre Amos Crooks</span></li>
@@ -325,7 +331,7 @@
     <div class="section-head reveal">
       <p class="eyebrow">What we value</p>
       <h2>How we choose to work.</h2>
-      <p>A handful of working principles that shape which projects we take and how we run them.</p>
+      <p>The principles that shape which engagements we take, and how we run them.</p>
     </div>
     <div class="values-grid">
       <div class="val-card val-card--solid reveal">
@@ -333,7 +339,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M12 14 6 9l6-5 6 5z"/><path d="M6 9v6l6 5 6-5V9"/></svg>
         </div>
         <h3>Evidence before opinions</h3>
-        <p>Recommendations are grounded in prototypes, benchmarks, or a working proof of concept — not just familiarity with a tool.</p>
+        <p>Recommendations are grounded in prototypes, benchmarks, or a working proof of concept, not familiarity with a tool alone.</p>
       </div>
       <div class="val-card val-card--outline reveal">
         <div class="val-icon">
@@ -356,15 +362,15 @@
 <section class="section" id="how-we-work">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Process</p>
-      <h2>From first conversation to ongoing support.</h2>
+      <p class="eyebrow">Engagement model</p>
+      <h2>From initial diagnosis to ongoing support.</h2>
       <p>The same four-stage process runs whether the engagement is a two-week research spike or a multi-month build.</p>
     </div>
     <ul class="timeline reveal">
       <li>
         <div class="t-label">Stage 01</div>
         <h4>Discover</h4>
-        <p>We start with the problem, not the solution — understanding constraints, stakeholders, and what "done" actually looks like before proposing anything.</p>
+        <p>We start with the problem, not the solution: understanding constraints, stakeholders, and what "done" actually looks like before proposing anything.</p>
       </li>
       <li>
         <div class="t-label">Stage 02</div>
@@ -379,7 +385,7 @@
       <li>
         <div class="t-label">Stage 04</div>
         <h4>Support</h4>
-        <p>We stay attached after launch for monitoring, fixes, and iteration — the team that built it is the team that maintains it.</p>
+        <p>We remain engaged after launch for monitoring, fixes, and iteration. The team that built the system is the team that maintains it.</p>
       </li>
     </ul>
   </div>
@@ -389,7 +395,7 @@
   <div class="container">
     <p class="eyebrow on-dark" style="justify-content:center; color:rgba(255,255,255,0.85);">Get in touch</p>
     <h2 style="margin-top:14px;">Want to work together?</h2>
-    <p>Tell us what you're building — we'll get back to you within one business day.</p>
+    <p>Tell us what you're building. We usually reply within one business day.</p>
     <div style="margin-top:28px;">
       <a class="btn btn-primary" href="index.html#contact">Start a conversation</a>
     </div>
@@ -404,8 +410,11 @@
     </a>
     <ul class="footer-links">
       <li><a href="services.html">Services</a></li>
-      <li><a href="index.html#approach">Approach</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="insights.html">Insights</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="careers.html">Careers</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <span class="footer-copy">© 2026 Mpire Global Technologies Sdn. Bhd.</span>
