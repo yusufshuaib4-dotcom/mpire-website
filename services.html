@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Services offered by Mpire Global Technologies: ICT research and development, computer consultancy, and computer programming.">
-<title>Services — Mpire Global Technologies</title>
+<title>Services: Mpire Global Technologies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -107,24 +107,24 @@
     backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
-  .nav-row{ display:flex; align-items:center; justify-content:space-between; padding-block:14px; }
-  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .nav-row{ display:flex; align-items:center; justify-content:space-between; padding-block:14px; gap:18px; }
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; flex:none; }
   .brand-mark{
     width:32px; height:32px; border-radius:var(--radius-sm); flex:none;
     background:var(--brand);
     color:#fff; font-family:var(--font-mono); font-weight:700; font-size:15px;
     display:flex; align-items:center; justify-content:center;
   }
-  .brand-name{ font-weight:700; font-size:15.5px; color:var(--ink); letter-spacing:-0.01em; }
-  .nav-links{ display:flex; align-items:center; gap:30px; list-style:none; margin:0; padding:0; }
-  .nav-links a{ text-decoration:none; color:var(--ink-soft); font-size:14.5px; font-weight:600; position:relative; }
+  .brand-name{ font-weight:700; font-size:15.5px; color:var(--ink); letter-spacing:-0.01em; white-space:nowrap; }
+  .nav-links{ display:flex; align-items:center; gap:18px; list-style:none; margin:0; padding:0; }
+  .nav-links a{ text-decoration:none; color:var(--ink-soft); font-size:13.5px; font-weight:600; position:relative; white-space:nowrap; }
   .nav-links a::after{
     content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:var(--brand);
     transform:scaleX(0); transform-origin:left; transition:transform .2s ease;
   }
   .nav-links a:hover{ color:var(--ink); }
   .nav-links a:hover::after{ transform:scaleX(1); }
-  .nav-actions{ display:flex; align-items:center; gap:14px; }
+  .nav-actions{ display:flex; align-items:center; gap:14px; flex:none; }
   .nav-cta{ display:inline-flex; }
   .nav-toggle{
     display:none; width:38px; height:38px; border-radius:var(--radius-sm); border:1px solid var(--line);
@@ -138,7 +138,7 @@
   .mobile-menu.open{ display:flex; }
   .mobile-menu a{ padding:11px 4px; text-decoration:none; color:var(--ink); font-weight:600; border-radius:var(--radius-sm); }
   .mobile-menu a:hover{ background:var(--paper-tint); }
-  @media (max-width:860px){
+  @media (max-width:1100px){
     .nav-links, .nav-cta{ display:none; }
     .nav-toggle{ display:flex; }
   }
@@ -249,7 +249,7 @@
   /* ---------- Footer ---------- */
   .footer{ background:var(--paper); border-top:1px solid var(--line); padding-block:40px; }
   .footer-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
-  .footer-links{ display:flex; gap:22px; list-style:none; margin:0; padding:0; }
+  .footer-links{ display:flex; gap:18px; list-style:none; margin:0; padding:0; flex-wrap:wrap; }
   .footer-links a{ text-decoration:none; color:var(--ink-soft); font-size:13.5px; }
   .footer-links a:hover{ color:var(--ink); }
   .footer-copy{ font-size:13px; color:var(--ink-soft); }
@@ -271,8 +271,11 @@
     <nav aria-label="Primary">
       <ul class="nav-links">
         <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="index.html#approach">Approach</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="careers.html">Careers</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
@@ -286,8 +289,11 @@
   <div class="container">
     <div class="mobile-menu" id="mobileMenu">
       <a href="services.html" class="active">Services</a>
-      <a href="index.html#approach">Approach</a>
+      <a href="industries.html">Industries</a>
+      <a href="work.html">Work</a>
+      <a href="insights.html">Insights</a>
       <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
       <a href="index.html#contact">Contact</a>
     </div>
   </div>
@@ -297,9 +303,9 @@
   <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?w=1800&q=80&auto=format&fit=crop" alt="" role="presentation"></div>
   <div class="container">
     <p class="breadcrumb"><a href="index.html">Home</a> / Services</p>
-    <p class="eyebrow on-dark">What we do</p>
+    <p class="eyebrow on-dark">Capabilities</p>
     <h1>Three disciplines, one team, start to finish.</h1>
-    <p class="lede">Applied research, independent technical advice, and custom software engineering — carried by the same people from first prototype through to production support.</p>
+    <p class="lede">Applied research, independent technical advisory, and custom software engineering, carried by the same people from first prototype through to production support.</p>
   </div>
 </section>
 
@@ -327,7 +333,7 @@
         </div>
         <div class="service-detail-copy">
           <h3>R&amp;D on ICT</h3>
-          <p>Applied research into emerging information and communication technology — the exploratory work that de-risks what gets built next. We test an idea's technical feasibility before committing a full engineering budget to it.</p>
+          <p>Applied research into emerging information and communication technology. This is the exploratory work that de-risks what gets built next: we test an idea's technical feasibility before committing a full engineering budget to it.</p>
           <ul class="deliverables">
             <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>A written feasibility assessment with clear go / no-go findings</li>
             <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Working prototypes used to test assumptions, not polished products</li>
@@ -353,7 +359,7 @@
         </div>
         <div class="service-detail-copy">
           <h3>Computer Consultancy</h3>
-          <p>Independent technical advice on architecture, tooling, and technology strategy — grounded in what will actually run and scale, not in what's trending. We have no reseller relationships or licensing incentives to protect.</p>
+          <p>Independent technical advisory on architecture, tooling, and technology strategy, grounded in what will actually run and scale rather than what's trending. We hold no reseller relationships or licensing incentives to protect.</p>
           <ul class="deliverables">
             <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>A systems or architecture review with prioritized findings</li>
             <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>A technology strategy aligned to your team's actual capacity</li>
@@ -364,8 +370,8 @@
             <h4>Typical engagement</h4>
             <ul class="engagement-list">
               <li><span class="eng-no">1</span><b>Audit</b><span>Review current architecture, tooling, and decision history.</span></li>
-              <li><span class="eng-no">2</span><b>Assess</b><span>Weigh options against your real constraints — team size, budget, timeline.</span></li>
-              <li><span class="eng-no">3</span><b>Recommend</b><span>Deliver a prioritized, actionable plan — not a generic best-practices deck.</span></li>
+              <li><span class="eng-no">2</span><b>Assess</b><span>Weigh options against your real constraints: team size, budget, and timeline.</span></li>
+              <li><span class="eng-no">3</span><b>Recommend</b><span>Deliver a prioritized, actionable plan rather than a generic best-practices deck.</span></li>
             </ul>
           </div>
         </div>
@@ -379,11 +385,11 @@
         </div>
         <div class="service-detail-copy">
           <h3>Computer Programming</h3>
-          <p>Custom software engineering and systems integration — designed, built, and supported by the team that scoped it. No hand-off between the people who understand the requirements and the people who write the code.</p>
+          <p>Custom software engineering and systems integration, designed, built, and supported by the team that scoped it. There is no hand-off between the people who understand the requirements and the people who write the code.</p>
           <ul class="deliverables">
             <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Custom application development, from scratch or on existing systems</li>
             <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Systems integration across existing tools and services</li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Code delivered in small, reviewable increments — not one big reveal</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Code delivered in small, reviewable increments, not one big reveal</li>
             <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Ongoing engineering support after launch</li>
           </ul>
           <div class="detail-panel">
@@ -391,7 +397,7 @@
             <ul class="engagement-list">
               <li><span class="eng-no">1</span><b>Design</b><span>Architecture and delivery plan sized to the actual problem.</span></li>
               <li><span class="eng-no">2</span><b>Build</b><span>Ship in small increments with regular check-ins along the way.</span></li>
-              <li><span class="eng-no">3</span><b>Support</b><span>Stay attached after launch for monitoring, fixes, and iteration.</span></li>
+              <li><span class="eng-no">3</span><b>Support</b><span>Remain engaged after launch for monitoring, fixes, and iteration.</span></li>
             </ul>
           </div>
         </div>
@@ -420,7 +426,7 @@
           How does an engagement typically start?
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </button>
-        <div class="accordion-panel"><p>With a short conversation about the problem you're trying to solve. From there we scope what a first engagement — research, an audit, or a build — should actually look like before any commercial terms are discussed.</p></div>
+        <div class="accordion-panel"><p>With a short conversation about the problem you're trying to solve. From there, we scope what a first engagement (research, an audit, or a build) should look like before any commercial terms are discussed.</p></div>
       </div>
       <div class="accordion-item">
         <button class="accordion-trigger" aria-expanded="false">
@@ -434,14 +440,14 @@
           Do you take on small, short-term projects?
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </button>
-        <div class="accordion-panel"><p>Yes — a short feasibility study or a focused architecture review is often exactly how a first engagement starts, ahead of any larger build.</p></div>
+        <div class="accordion-panel"><p>Yes. A short feasibility study or a focused architecture review is often exactly how a first engagement starts, ahead of any larger build.</p></div>
       </div>
       <div class="accordion-item">
         <button class="accordion-trigger" aria-expanded="false">
           Do you support what you build after launch?
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         </button>
-        <div class="accordion-panel"><p>Yes. We stay attached after launch for monitoring, fixes, and iteration — the same engineers who built it, rather than handing you off to a separate support desk.</p></div>
+        <div class="accordion-panel"><p>Yes. We remain engaged after launch for monitoring, fixes, and iteration: the same engineers who built the system, rather than a separate support desk.</p></div>
       </div>
     </div>
   </div>
@@ -466,8 +472,11 @@
     </a>
     <ul class="footer-links">
       <li><a href="services.html">Services</a></li>
-      <li><a href="index.html#approach">Approach</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="insights.html">Insights</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="careers.html">Careers</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <span class="footer-copy">© 2026 Mpire Global Technologies Sdn. Bhd.</span>
