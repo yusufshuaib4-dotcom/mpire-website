@@ -228,6 +228,11 @@
     background:var(--brand); border:3px solid var(--paper); box-shadow:0 0 0 1px var(--line-strong);
   }
   .timeline .t-label{ font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--brand); margin-bottom:4px; font-weight:600; }
+  @media (min-width:900px){
+    .timeline{ max-width:none; border-left:none; border-top:2px solid var(--line); display:grid; grid-template-columns:repeat(4,1fr); gap:32px; padding-top:28px; }
+    .timeline li{ padding:0; }
+    .timeline li::before{ left:0; top:-38px; }
+  }
   .timeline h4{ font-size:16px; margin-bottom:6px; font-weight:700; }
   .timeline p{ font-size:14.3px; color:var(--ink-soft); }
 
