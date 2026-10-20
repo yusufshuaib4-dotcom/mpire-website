@@ -514,14 +514,14 @@
     <div class="section-head reveal">
       <p class="eyebrow">Read on</p>
       <h2>See the model at work.</h2>
-      <p>Two more places to look before you get in touch: how engagements play out in practice, and what we're currently thinking about.</p>
+      <p>Two more places to look before you get in touch: the ways you can start working with us, and how we think about technology decisions.</p>
     </div>
     <div class="cross-grid">
       <a class="cross-card reveal" href="work.html">
         <span class="eyebrow">Selected work</span>
-        <h3>How the model plays out across real engagements.</h3>
-        <p>Representative engagements across R&amp;D, consultancy, and programming, described in general terms to respect client confidentiality.</p>
-        <span class="go">View our work →</span>
+        <h3>Four ways to start working with Mpire.</h3>
+        <p>Feasibility studies, architecture reviews, custom builds, and research-to-delivery engagements, and what each one delivers.</p>
+        <span class="go">See how we engage →</span>
       </a>
       <a class="cross-card reveal" href="insights.html">
         <span class="eyebrow">Perspectives</span>
@@ -553,7 +553,8 @@
           <div><div class="label">Email</div><div class="value"><a href="mailto:support@mpiretech.io">support@mpiretech.io</a></div></div>
         </div>
       </div>
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/mpire-contact" method="POST">
+      <!-- CONTACT FORM: paste the Formspree endpoint (https://formspree.io/f/XXXXXXX) into action="". While it is empty, Send opens the visitor's email app addressed to support@mpiretech.io. -->
+      <form class="contact-form" id="contactForm" action="" method="POST">
         <div class="field">
           <label for="cf-name">Name</label>
           <input id="cf-name" name="name" type="text" placeholder="Your name" required>
@@ -650,7 +651,9 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
       var data = new FormData(form);
-      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      var endpoint = form.getAttribute('action');
+      var send = endpoint ? fetch(endpoint, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } }) : Promise.reject(new Error('No form endpoint configured'));
+      send
         .then(function(res){
           if(res.ok){
             showStatus("Thank you. Your message has been sent, and we'll get back to you soon.", 'success');
