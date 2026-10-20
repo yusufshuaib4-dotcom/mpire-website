@@ -208,6 +208,12 @@
   @keyframes fade-in{ from{ opacity:0; transform:translateY(6px);} to{ opacity:1; transform:none; } }
   .service-detail{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px; align-items:start; }
   @media (max-width:860px){ .service-detail{ grid-template-columns:1fr; } }
+  .photo--pattern{ background:radial-gradient(700px 360px at 85% 10%, rgba(61,47,224,0.6), transparent 60%),
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px) 0 0/40px 40px,
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px) 0 0/40px 40px,
+      var(--ink); display:flex; align-items:center; justify-content:center; }
+  .photo--pattern::after{ display:none; }
+  .photo--pattern span{ font-family:var(--font-mono); font-weight:700; font-size:clamp(3rem,7vw,5rem); color:#fff; opacity:0.9; letter-spacing:0.02em; }
   .service-detail .photo{ border-radius:var(--radius); aspect-ratio:4/3; }
   .service-detail-copy h3{ font-size:22px; margin-bottom:14px; }
   .service-detail-copy > p{ color:var(--ink-soft); font-size:15.5px; margin-bottom:22px; }
@@ -334,9 +340,8 @@
 
     <div class="tab-panel active" id="panel-rnd" role="tabpanel" aria-labelledby="tab-rnd">
       <div class="service-detail">
-        <div class="photo">
-          <img src="https://images.unsplash.com/photo-1516031190212-da133013de50?w=900&q=80&auto=format&fit=crop" alt="Terminal screen showing code, representing applied research" loading="lazy">
-        </div>
+        <!-- IMAGE: pattern background (no third-party photo). Swap for a company-owned photo when available. -->
+        <div class="photo photo--pattern" aria-hidden="true"><span>R&amp;D</span></div>
         <div class="service-detail-copy">
           <h3>R&amp;D on ICT</h3>
           <p>Applied research into emerging information and communication technology. This is the exploratory work that de-risks what gets built next: we test an idea's technical feasibility before committing a full engineering budget to it.</p>
@@ -386,9 +391,8 @@
 
     <div class="tab-panel" id="panel-programming" role="tabpanel" aria-labelledby="tab-programming" hidden>
       <div class="service-detail">
-        <div class="photo">
-          <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?w=900&q=80&auto=format&fit=crop" alt="Engineer working across multiple monitors, representing programming" loading="lazy">
-        </div>
+        <!-- IMAGE: pattern background (no third-party photo). Swap for a company-owned photo when available. -->
+        <div class="photo photo--pattern" aria-hidden="true"><span>&lt;/&gt;</span></div>
         <div class="service-detail-copy">
           <h3>Computer Programming</h3>
           <p>Custom software engineering and systems integration, designed, built, and supported by the team that scoped it. There is no hand-off between the people who understand the requirements and the people who write the code.</p>
