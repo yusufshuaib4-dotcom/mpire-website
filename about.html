@@ -157,6 +157,12 @@
   .photo.duo-light::after{ background:linear-gradient(135deg, rgba(61,47,224,0.5), rgba(10,10,18,0.28)); }
   @media (max-width:520px){ .photo .photo-caption{ flex-direction:column; gap:4px; } }
   .photo-caption span{ white-space:nowrap; }
+  .photo--pattern{ background:radial-gradient(700px 360px at 85% 10%, rgba(61,47,224,0.6), transparent 60%),
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px) 0 0/40px 40px,
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px) 0 0/40px 40px,
+      var(--ink); display:flex; align-items:center; justify-content:center; }
+  .photo--pattern::after{ display:none; }
+  .photo--pattern > span{ font-family:var(--font-mono); font-weight:700; font-size:clamp(3rem,7vw,5rem); color:#fff; opacity:0.9; letter-spacing:0.02em; }
   .photo-caption{
     position:absolute; left:0; right:0; bottom:0; z-index:1; padding:18px 22px;
     display:flex; align-items:baseline; justify-content:space-between; gap:12px;
@@ -329,8 +335,9 @@
         <li><b>Contact</b><span><a href="mailto:support@mpiretech.io">support@mpiretech.io</a></span></li>
       </ul>
     </div>
-    <div class="photo reveal">
-      <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1000&q=80&auto=format&fit=crop" alt="Engineers collaborating in a technology office" loading="lazy">
+    <!-- IMAGE: pattern background (no third-party photo). Swap for a company-owned photo when available. -->
+    <div class="photo photo--pattern reveal">
+      <span aria-hidden="true">M</span>
       <div class="photo-caption"><span>R&amp;D · Consultancy · Programming</span><span>Kuala Lumpur</span></div>
     </div>
   </div>

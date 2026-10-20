@@ -174,6 +174,11 @@
     content:""; position:absolute; inset:0;
     background:linear-gradient(100deg, rgba(6,5,20,0.94) 30%, rgba(36,28,153,0.72) 64%, rgba(61,47,224,0.5) 100%);
   }
+  .page-hero-bg--pattern{ background:radial-gradient(700px 360px at 85% 10%, rgba(61,47,224,0.6), transparent 60%),
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px) 0 0/40px 40px,
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px) 0 0/40px 40px,
+      var(--ink); }
+  .page-hero-bg--pattern::after{ background:linear-gradient(100deg, rgba(6,5,20,0.85) 25%, rgba(6,5,20,0.2) 100%); }
   .page-hero .container{ position:relative; z-index:1; padding-block:76px 60px; }
   .breadcrumb{ font-family:var(--font-mono); font-size:12.5px; color:var(--on-dark-muted); margin-bottom:18px; }
   .breadcrumb a{ color:var(--on-dark-muted); text-decoration:none; }
@@ -312,7 +317,8 @@
 </header>
 
 <section class="page-hero">
-  <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?w=1800&q=80&auto=format&fit=crop" alt="" role="presentation"></div>
+  <!-- IMAGE: pattern background (no third-party photo). Swap for a company-owned photo when available. -->
+  <div class="page-hero-bg page-hero-bg--pattern" aria-hidden="true"></div>
   <div class="container">
     <p class="breadcrumb"><a href="index.html">Home</a> / Services</p>
     <p class="eyebrow on-dark">Capabilities</p>
@@ -365,9 +371,8 @@
 
     <div class="tab-panel" id="panel-consultancy" role="tabpanel" aria-labelledby="tab-consultancy" hidden>
       <div class="service-detail">
-        <div class="photo">
-          <img src="https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?w=900&q=80&auto=format&fit=crop" alt="Whiteboard planning session, representing consultancy" loading="lazy">
-        </div>
+        <!-- IMAGE: pattern background (no third-party photo). Swap for a company-owned photo when available. -->
+        <div class="photo photo--pattern" aria-hidden="true"><span>Advisory</span></div>
         <div class="service-detail-copy">
           <h3>Computer Consultancy</h3>
           <p>Independent technical advisory on architecture, tooling, and technology strategy, grounded in what will actually run and scale rather than what's trending. We hold no reseller relationships or licensing incentives to protect.</p>
