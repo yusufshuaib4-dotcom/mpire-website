@@ -546,7 +546,11 @@
         </div>
         <div class="cta-item">
           <div class="cta-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-          <div><div class="label">Registered address</div><div class="value">T1-42-01 Core Residence (Residensi Simbar TRX)<br>12 Jalan Barat, Tun Razak Exchange<br>55188 Kuala Lumpur, Wilayah Persekutuan, Malaysia</div></div>
+          <div><div class="label">Office</div><div class="value">Suite T-77, Exchange 106<br>Lingkaran TRX<br>55188 Kuala Lumpur, Malaysia</div></div>
+        </div>
+        <div class="cta-item">
+          <div class="cta-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+          <div><div class="label">Email</div><div class="value"><a href="mailto:support@mpiretech.io">support@mpiretech.io</a></div></div>
         </div>
       </div>
       <form class="contact-form" id="contactForm" action="https://formspree.io/f/mpire-contact" method="POST">
@@ -658,7 +662,7 @@
         .catch(function(){
           var subject = encodeURIComponent('Enquiry from ' + name);
           var body = encodeURIComponent(message + '. Sent by ' + name + ' (' + email + ').');
-          window.location.href = 'mailto:hello@mpiretech.com?subject=' + subject + '&body=' + body;
+          window.location.href = 'mailto:support@mpiretech.io?subject=' + subject + '&body=' + body;
           showStatus('Opening your email client to send this message directly.', 'success');
         })
         .finally(function(){
