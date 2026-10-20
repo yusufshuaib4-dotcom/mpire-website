@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Services offered by Mpire Global Technologies: ICT research and development, computer consultancy, and computer programming.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <title>Services: Mpire Global Technologies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -136,6 +137,8 @@
   .nav-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
   .mobile-menu{ display:none; flex-direction:column; gap:2px; padding:10px 0 16px; border-top:1px solid var(--line); }
   .mobile-menu.open{ display:flex; }
+  .nav:has(.mobile-menu.open){ background:var(--paper); backdrop-filter:none; -webkit-backdrop-filter:none; }
+  button, input, textarea, select{ font-family:inherit; }
   .mobile-menu a{ padding:11px 4px; text-decoration:none; color:var(--ink); font-weight:600; border-radius:var(--radius-sm); }
   .mobile-menu a:hover{ background:var(--paper-tint); }
   @media (max-width:1100px){
@@ -152,6 +155,8 @@
     mix-blend-mode:multiply;
   }
   .photo.duo-light::after{ background:linear-gradient(135deg, rgba(61,47,224,0.5), rgba(10,10,18,0.28)); }
+  @media (max-width:520px){ .photo .photo-caption{ flex-direction:column; gap:4px; } }
+  .photo-caption span{ white-space:nowrap; }
   .photo-caption{
     position:absolute; left:0; right:0; bottom:0; z-index:1; padding:18px 22px;
     display:flex; align-items:baseline; justify-content:space-between; gap:12px;
@@ -189,6 +194,7 @@
   .section-tint{ background:var(--paper-tint); }
 
   /* ---------- Tabs (Services detail) ---------- */
+  #service-detail .tabs{ scroll-margin-top:88px; }
   .tabs{ display:flex; gap:6px; flex-wrap:wrap; border-bottom:1px solid var(--line); margin-bottom:44px; }
   .tab-btn{
     padding:14px 20px; border:none; background:transparent; font-family:var(--font-sans); font-weight:700;
@@ -361,17 +367,17 @@
           <h3>Computer Consultancy</h3>
           <p>Independent technical advisory on architecture, tooling, and technology strategy, grounded in what will actually run and scale rather than what's trending. We hold no reseller relationships or licensing incentives to protect.</p>
           <ul class="deliverables">
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>A systems or architecture review with prioritized findings</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>A systems or architecture review with prioritised findings</li>
             <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>A technology strategy aligned to your team's actual capacity</li>
             <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Independent vendor and tooling assessments</li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>A prioritized action plan your own team can execute</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>A prioritised action plan your own team can execute</li>
           </ul>
           <div class="detail-panel">
             <h4>Typical engagement</h4>
             <ul class="engagement-list">
               <li><span class="eng-no">1</span><b>Audit</b><span>Review current architecture, tooling, and decision history.</span></li>
               <li><span class="eng-no">2</span><b>Assess</b><span>Weigh options against your real constraints: team size, budget, and timeline.</span></li>
-              <li><span class="eng-no">3</span><b>Recommend</b><span>Deliver a prioritized, actionable plan rather than a generic best-practices deck.</span></li>
+              <li><span class="eng-no">3</span><b>Recommend</b><span>Deliver a prioritised, actionable plan rather than a generic best-practices deck.</span></li>
             </ul>
           </div>
         </div>
@@ -551,7 +557,11 @@
     });
   });
   var initial = (location.hash || '').replace('#', '');
-  if(panels[initial]) selectTab(initial, false);
+  if(panels[initial]){
+    selectTab(initial, false);
+    var detail = document.querySelector('#service-detail .tabs');
+    if(detail) setTimeout(function(){ detail.scrollIntoView({ behavior:'auto', block:'start' }); }, 0);
+  }
 
   // FAQ accordion
   document.querySelectorAll('#faqAccordion .accordion-item').forEach(function(item){

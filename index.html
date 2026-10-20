@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Mpire Global Technologies Sdn. Bhd.: ICT research and development, computer consultancy, and computer programming, based in Kuala Lumpur.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <title>Mpire Global Technologies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -136,6 +137,8 @@
   .nav-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
   .mobile-menu{ display:none; flex-direction:column; gap:2px; padding:10px 0 16px; border-top:1px solid var(--line); }
   .mobile-menu.open{ display:flex; }
+  .nav:has(.mobile-menu.open){ background:var(--paper); backdrop-filter:none; -webkit-backdrop-filter:none; }
+  button, input, textarea, select{ font-family:inherit; }
   .mobile-menu a{ padding:11px 4px; text-decoration:none; color:var(--ink); font-weight:600; border-radius:var(--radius-sm); }
   .mobile-menu a:hover{ background:var(--paper-tint); }
   @media (max-width:1100px){
@@ -152,6 +155,8 @@
     mix-blend-mode:multiply;
   }
   .photo.duo-light::after{ background:linear-gradient(135deg, rgba(61,47,224,0.5), rgba(10,10,18,0.28)); }
+  @media (max-width:520px){ .photo .photo-caption{ flex-direction:column; gap:4px; } }
+  .photo-caption span{ white-space:nowrap; }
   .photo-caption{
     position:absolute; left:0; right:0; bottom:0; z-index:1; padding:18px 22px;
     display:flex; align-items:baseline; justify-content:space-between; gap:12px;
@@ -172,8 +177,8 @@
   .hero-inner{
     position:relative; z-index:1;
     padding-block:112px 96px;
-    max-width:760px;
   }
+  .hero-copy{ max-width:760px; }
   @media (max-width:720px){ .hero-inner{ padding-block:64px 56px; } }
   .hero-copy .eyebrow{ margin-bottom:22px; }
   .hero h1{ font-size:clamp(2.3rem, 5vw, 3.7rem); color:#fff; }
@@ -187,6 +192,7 @@
     font-family:var(--font-mono);
   }
   .stat-item:last-child{ border-right:none; }
+  @media (max-width:720px){ .stat-item{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.1); } .stat-item:last-child{ border-bottom:none; } }
   .stat-item b{ display:block; font-size:14.5px; color:#fff; font-weight:600; letter-spacing:-0.01em; }
   .stat-item span{ display:block; margin-top:4px; font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--on-dark-muted); }
 
@@ -224,7 +230,7 @@
   .svc-card--photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:grayscale(55%) contrast(1.08); z-index:0; }
   .svc-card--photo::before{
     content:""; position:absolute; inset:0; z-index:0;
-    background:linear-gradient(180deg, rgba(10,10,18,0.15) 0%, rgba(10,10,18,0.92) 100%), linear-gradient(135deg, rgba(61,47,224,0.55), transparent 60%);
+    background:linear-gradient(180deg, rgba(10,10,18,0.55) 0%, rgba(10,10,18,0.95) 70%), linear-gradient(135deg, rgba(61,47,224,0.6), transparent 60%);
   }
   .svc-card--photo .no, .svc-card--photo h3, .svc-card--photo p, .svc-card--photo .go{ position:relative; z-index:1; }
   .svc-card--photo .no{ color:var(--pop); }
@@ -240,9 +246,9 @@
   .steps{ display:grid; grid-template-columns:repeat(4, 1fr); gap:0; position:relative; }
   @media (max-width:860px){ .steps{ grid-template-columns:1fr 1fr; row-gap:40px; } }
   @media (max-width:520px){ .steps{ grid-template-columns:1fr; } }
-  .step{ position:relative; padding-right:24px; }
+  .step{ position:relative; padding-right:48px; }
   .step:not(:last-child)::after{
-    content:"→"; position:absolute; right:-4px; top:2px; color:var(--pop); font-size:20px; font-weight:700;
+    content:"→"; position:absolute; right:16px; top:6px; color:var(--pop); font-size:20px; font-weight:700;
   }
   @media (max-width:860px){ .step:not(:last-child)::after{ display:none; } }
   .step-no{ font-family:var(--font-mono); font-size:28px; font-weight:700; color:var(--pop); margin-bottom:16px; display:block; }
