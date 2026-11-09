@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yusufshuaib4-dotcom.github.io/mpire-website/sitemap.xml
