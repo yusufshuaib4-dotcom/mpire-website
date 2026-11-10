@@ -205,6 +205,14 @@
 
   /* ---------- Section headers ---------- */
   .section{ padding-block:100px; }
+  .focus-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  @media (max-width:1000px){ .focus-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .focus-grid{ grid-template-columns:1fr; } }
+  .focus-card{ border:1px solid var(--line); border-radius:var(--radius, 8px); padding:28px 24px; background:var(--paper); display:flex; flex-direction:column; gap:12px; }
+  .focus-no{ font-family:var(--font-mono); font-size:13px; font-weight:600; color:var(--brand); }
+  .focus-card h3{ font-size:19px; }
+  .focus-card p{ color:var(--ink-soft); font-size:15px; line-height:1.6; }
+
   .section-head{ max-width:640px; margin-bottom:52px; }
   .section-head .eyebrow{ margin-bottom:16px; }
   .section-head h2{ font-size:clamp(1.8rem, 3.4vw, 2.5rem); }
@@ -434,6 +442,41 @@
   </div>
 </section>
 
+<!-- TECHNOLOGY FOCUS: aligned with MDEC Malaysia Digital (MD) Activities (Guidelines effective 28 Aug 2025, Appendix 1).
+     Only areas already described elsewhere on this site are listed. Add others (e.g. data centre and cloud, cybersecurity,
+     UI/UX, blockchain) ONLY once the company confirms it delivers them. -->
+<section class="section" id="technology-focus">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Technology focus</p>
+      <h2>The technologies our work centres on.</h2>
+      <p>Our research, advisory and engineering work is concentrated in four digital technology areas.</p>
+    </div>
+    <div class="focus-grid">
+      <div class="focus-card reveal">
+        <span class="focus-no">01</span>
+        <h3>Artificial intelligence</h3>
+        <p>Applied machine learning and computer vision: feasibility studies, prototypes and production systems for quality control, forecasting, predictive maintenance and personalisation.</p>
+      </div>
+      <div class="focus-card reveal">
+        <span class="focus-no">02</span>
+        <h3>Data analytics</h3>
+        <p>Turning operational data into forecasts and optimisation models, with validation of how models behave before they are relied on.</p>
+      </div>
+      <div class="focus-card reveal">
+        <span class="focus-no">03</span>
+        <h3>Internet of Things</h3>
+        <p>Integrating sensors and connected devices with existing systems, so that data from the field reaches the software that acts on it.</p>
+      </div>
+      <div class="focus-card reveal">
+        <span class="focus-no">04</span>
+        <h3>Systems and network architecture</h3>
+        <p>Architecture design, review and support, including systems integration, legacy modernisation and platform migration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section-tint">
   <div class="container">
     <div class="section-head reveal">
@@ -507,6 +550,9 @@
       <li><a href="careers.html">Careers</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
+    <!-- LEGAL LINE (Companies Act 2016, s.30(2)(b)): company name and SSM registration number must be shown prominently.
+         Replace with: © 2026 Mpire Global Technologies Sdn. Bhd. (Registration No. XXXXXXXXXXXX) once the number is confirmed for publication.
+         MD STATUS: add "Malaysia Digital (MD) Status company" here only after MDEC issues the approval letter. -->
     <span class="footer-copy">© 2026 Mpire Global Technologies Sdn. Bhd.</span>
   </div>
 </footer>
