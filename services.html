@@ -206,6 +206,18 @@
   /* ---------- Section headers ---------- */
   .section{ padding-block:100px; }
   .service-detail-copy .msic{ font-family:var(--font-mono); font-size:12.5px; letter-spacing:0.04em; color:var(--ink-soft); margin-top:6px; }
+  .section-dark{ background:#0A0A12; color:#F5F5FF; }
+  .section-dark .btn-primary{ color:#0A0A12; }
+  .product-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:center; }
+  @media (max-width:900px){ .product-grid{ grid-template-columns:1fr; gap:40px; } }
+  .product-grid h2{ font-size:clamp(1.8rem, 3.4vw, 2.5rem); color:#fff; margin-top:16px; }
+  .product-lede{ margin:18px 0 28px; color:#B7B4E0; font-size:16.5px; line-height:1.65; max-width:56ch; }
+  .product-steps{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px; }
+  .product-steps li{ display:flex; gap:16px; align-items:flex-start; border:1px solid rgba(255,255,255,0.12); border-radius:var(--radius); padding:18px 20px; background:rgba(255,255,255,0.03); }
+  .product-steps .ps-no{ font-family:var(--font-mono); font-size:13px; font-weight:600; color:var(--pop); padding-top:2px; }
+  .product-steps b{ display:block; color:#fff; font-size:16px; }
+  .product-steps span:not(.ps-no){ color:#B7B4E0; font-size:14.5px; }
+  .product-steps .ps-note{ border:none; background:none; padding:4px 0 0; font-family:var(--font-mono); font-size:12.5px; color:#B7B4E0; }
   .focus-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
   @media (max-width:1000px){ .focus-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:560px){ .focus-grid{ grid-template-columns:1fr; } }
@@ -297,6 +309,7 @@
   .nav-links a.active{ color:var(--ink); }
   .nav-links a.active::after{ transform:scaleX(1); }
   .mobile-menu a.active{ background:var(--paper-tint); }
+  .footer-reg{ white-space:nowrap; }
 </style>
 
 <body>
@@ -482,6 +495,24 @@
   </div>
 </section>
 
+<!-- OWN PRODUCT: planned AI product. Keep wording to what is true today (planned, pilot in 2027). Update status, name and screenshots as it progresses. -->
+<section class="section section-dark" id="product">
+  <div class="container product-grid">
+    <div class="reveal">
+      <p class="eyebrow on-dark">Our own product · In development</p>
+      <h2>AI-assisted document processing and business insights for SMEs.</h2>
+      <p class="product-lede">Small and medium businesses spend hours re-typing data from invoices, orders and other documents. We are developing a tool that extracts that data automatically and turns it into simple dashboards, so owners can see what is happening in their business without the manual work.</p>
+      <a class="btn btn-primary" href="mailto:support@mpiretech.io?subject=AI%20document%20tool%20pilot">Register interest in the pilot</a>
+    </div>
+    <ul class="product-steps reveal">
+      <li><span class="ps-no">01</span><div><b>Capture</b><span>Upload invoices, orders and other business documents.</span></div></li>
+      <li><span class="ps-no">02</span><div><b>Extract</b><span>AI reads each document and pulls out the data that matters.</span></div></li>
+      <li><span class="ps-no">03</span><div><b>See</b><span>Simple dashboards show the trends behind the paperwork.</span></div></li>
+      <li class="ps-note">A pilot with SME users is planned for 2027.</li>
+    </ul>
+  </div>
+</section>
+
 <section class="section section-tint">
   <div class="container">
     <div class="section-head reveal">
@@ -555,10 +586,9 @@
       <li><a href="careers.html">Careers</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
-    <!-- LEGAL LINE (Companies Act 2016, s.30(2)(b)): company name and SSM registration number must be shown prominently.
-         Replace with: © 2026 Mpire Global Technologies Sdn. Bhd. (Registration No. XXXXXXXXXXXX) once the number is confirmed for publication.
+    <!-- LEGAL LINE (Companies Act 2016, s.30(2)(b)): company name and SSM registration number, shown on every page.
          MD STATUS: add "Malaysia Digital (MD) Status company" here only after MDEC issues the approval letter. -->
-    <span class="footer-copy">© 2026 Mpire Global Technologies Sdn. Bhd.</span>
+    <span class="footer-copy">© 2026 Mpire Global Technologies Sdn. Bhd. <span class="footer-reg">Registration No. 202601010434 (1672532-U)</span></span>
   </div>
 </footer>
 
