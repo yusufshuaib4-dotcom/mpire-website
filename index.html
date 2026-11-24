@@ -579,8 +579,8 @@
           <div><div class="label">Email</div><div class="value"><a href="mailto:support@mpiretech.io">support@mpiretech.io</a></div></div>
         </div>
       </div>
-      <!-- CONTACT FORM: paste the Formspree endpoint (https://formspree.io/f/XXXXXXX) into action="". While it is empty, Send opens the visitor's email app addressed to support@mpiretech.io. -->
-      <form class="contact-form" id="contactForm" action="" method="POST">
+      <!-- CONTACT FORM: enquiries are submitted to the company's Formspree form. -->
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/meagpdlz" method="POST">
         <div class="field">
           <label for="cf-name">Name</label>
           <input id="cf-name" name="name" type="text" placeholder="Your name" required>
@@ -691,10 +691,7 @@
           }
         })
         .catch(function(){
-          var subject = encodeURIComponent('Enquiry from ' + name);
-          var body = encodeURIComponent(message + '. Sent by ' + name + ' (' + email + ').');
-          window.location.href = 'mailto:support@mpiretech.io?subject=' + subject + '&body=' + body;
-          showStatus('Opening your email client to send this message directly.', 'success');
+          showStatus('Your message could not be sent. Please try again, or email support@mpiretech.io directly. Your message is still here.', 'error');
         })
         .finally(function(){
           submitBtn.disabled = false;
